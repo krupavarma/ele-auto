@@ -1,6 +1,6 @@
 {
   "name": "ele-auto",
-  "version": "2.0.12",
+  "version": "2.0.13",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
@@ -23,12 +23,6 @@
     "http-server": "^0.11.1"
   },
   "build": {
-    "publish": [
-      {
-        "provider": "generic",
-        "url": "com.github.com.krupavarma.ele-auto"
-      }
-    ],
     "appId": "com.github.krupavarma.ele-auto",
     "linux": {
       "category": "Utility",
