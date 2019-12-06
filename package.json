@@ -1,8 +1,10 @@
 {
   "name": "electron-updater-generic-example",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "main.js",
   "description": "electron-updater generic example project",
+  "repository": "https://github.com/krupavarma/ele-auto",
+  "main": "main.js",
   "scripts": {
     "start": "electron ./app",
     "postinstall": "install-app-deps",
@@ -26,14 +28,6 @@
         "url": "http://127.0.0.1:8080/"
       }
     ],
-    "appId": "com.github.krupavarma.ele-auto",
-    "mac": {
-      "category": "your.app.category.type",
-      "target": [
-        "zip",
-        "dmg"
-      ]
-    },
     "nsis": {
       "perMachine": true
     }
