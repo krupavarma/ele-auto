@@ -72,7 +72,7 @@ function createDefaultWindow() {
   win.on('closed', () => {
     win = null;
   });
-  win.loadURL('file://' + __dirname + '/../src/index.html');
+  win.loadURL('file://' + __dirname + '/version.html');
   return win;
 }
 autoUpdater.on('checking-for-update', () => {
