@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-generic-example",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "main.js",
   "description": "electron-updater generic example project",
   "repository": "https://github.com/krupavarma/ele-auto",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "electron-log": "^1.3.0",
-    "electron-updater": "^1.4.2"
+    "electron-updater": "^4.0.0"
   },
   "build": {
     "publish": [
