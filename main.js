@@ -43,9 +43,7 @@ if (process.platform === 'darwin') {
     ]
   });
 }
-autoUpdater.requestHeaders = {
-  'PRIVATE-TOKEN': '87ade3eb752c1e8c3c006909652398dc7c819c84'
-};
+
 //-------------------------------------------------------------------
 // Open a window that displays the version
 //
