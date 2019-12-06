@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "5.0.8",
+  "version": "5.0.9",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "start": "electron .",
-    "dist": "build --linux",
+    "dist": "build --linux -p always",
     "serve": "http-server wwwroot/ -p 8080"
   },
   "dependencies": {
@@ -26,6 +26,7 @@
     "publish": [
       {
         "provider": "github",
+        "owner": "krupavarma",
         "url": "com.github.krupavarma.ele-auto"
       }
     ],
