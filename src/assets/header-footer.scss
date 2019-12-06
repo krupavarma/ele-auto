@@ -1,0 +1,91 @@
+.page-main-header {
+  .navbar {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .navbar-brand {
+    padding: 0;
+    img {
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      margin-left: 15px;
+    }
+    span img {
+      padding-left: 15px;
+    }
+  }
+  .btn.focus,
+  .btn:focus {
+    box-shadow: none;
+  }
+  .app_navbar .language-drop-down {
+    left: -95px;
+  }
+}
+
+.page-main-footer {
+  display: flex;
+  align-items: center;
+  background: #f7f8fb;
+  padding: 5px 0;
+  .location-selection-sec {
+    display: flex;
+    justify-content: center;
+    button {
+      background: none;
+      display: flex;
+      padding: 0;
+      span img {
+        width: 40px;
+      }
+      .imgAr {
+        width: 40px;
+        transform: rotate(deg);
+        transform: scaleX(-1);
+        margin-left: 20px;
+      }
+      .delivery-location-holder {
+        text-align: left;
+        padding-left: 10px;
+        p {
+          margin: 0;
+          color: #00a657;
+        }
+      }
+    }
+  }
+  .footer_right {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    .common-btn {
+      background: #00a657;
+      color: #fff;
+      padding: 10px 15px;
+      min-width: 150px;
+      border-radius: 4px;
+      margin: 0 10px;
+    }
+    .payment-btn {
+      margin-right: 0;
+    }
+  }
+  .total-payment-section {
+    display: flex;
+    p {
+      margin: 0;
+      flex: 1;
+      font-weight: bold;
+    }
+    .total-payment-value {
+      text-align: right;
+      padding-right: 25px;
+    }
+  }
+}
+.btn-icon {
+  padding-right: 10px;
+}
+.ar .btn-icon {
+  padding-left: 6px;
+}

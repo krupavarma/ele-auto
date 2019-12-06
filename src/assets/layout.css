@@ -1,0 +1,491 @@
+@font-face {
+  font-family: "DroidArabicFont";
+  src: url("./fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf"); /* IE9 Compat Modes */
+  src: url("./fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ /* url('webfont.woff2') format('woff2'),  */
+      /* url('webfont.woff') format('woff') */
+      url("./fonts/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf")
+      format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "Source Sans Pro";
+  font-style: normal;
+  font-display: swap;
+  font-weight: normal;
+  src: 
+  /* local('Source Sans Pro Regular '), local('Source Sans Pro-Regular'), */
+    /* url('../../node_modules/typeface-source-sans-pro/files/source-sans-pro-latin-400.woff2') */ url("../assets/fonts/Source_Sans_Pro/SourceSansPro-Regular.ttf")
+    format("truetype");
+}
+html,
+body {
+  padding: 0;
+  /* margin: 0; */
+  min-height: 100vh;
+}
+
+.en {
+  /* font-family: 'Source Sans Pro', sans-serif !important; */
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 400;
+  /* direction:rtl; */
+}
+
+.ar {
+  /* font-family: 'Droid Arabic Kufi'; */
+  font-family: "DroidArabicFont";
+
+  font-weight: 600;
+  direction: rtl;
+  /* font-family: DroidArabicKufi; */
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.93;
+  letter-spacing: normal;
+  /* text-align: left; */
+  color: #42444d;
+}
+
+/* .en .user-icon{
+    margin-left: 325px;
+    margin-top: -38px;
+} */
+.en .user-icon2 {
+  position: relative;
+  bottom: 35px;
+  width: 24px;
+  left: 320px;
+}
+
+.ar .user-icon2 {
+  position: relative;
+  bottom: 34px;
+  left: 15px;
+  width: 23px;
+}
+
+.en .ppp2 {
+  /* margin-left:36%; */
+}
+
+.ar .user-icon {
+  margin-top: 12px;
+  margin-left: -352px;
+}
+
+.ar .title {
+  font-weight: bold;
+}
+
+/* .ar .user-icon{
+    margin-top:12px;
+    margin-left:-352px;
+} */
+.ar .title {
+  /* font-weight:bold; */
+  /* font-family: 'Droid Arabic Kufi'; */
+  font-family: "DroidArabicFont";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.93;
+  letter-spacing: normal;
+  text-align: left;
+  color: #42444d;
+}
+
+.ar .image1 {
+  padding-left: 18px;
+  float: right;
+}
+
+.en .label1 {
+  /* text-align:center;
+    margin-left:36%; */
+}
+
+.ar .label1 {
+  margin-left: 70%;
+  /* font-family: 'Droid Arabic Kufi';
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.93;
+    letter-spacing: normal;
+    text-align: left;
+    color: #42444d; */
+}
+
+.ar .label1 {
+}
+
+.ar .forgot {
+  /* float:left; */
+}
+
+.en .user-icon {
+  position: relative;
+  bottom: 14px;
+  left: 84%;
+  width: 22px;
+}
+
+.ar .forgot {
+  /* margin-left:-40px; */
+}
+
+/* .en .forgotuser{
+    margin-left:36%;
+}
+.ar .forgotuser{
+    margin-left:48%;
+
+} */
+.ar .user-icon {
+  margin-left: -40%;
+}
+
+.en .ppp {
+  margin-left: 0%;
+}
+
+.ar .ppp2 {
+  /* float:left;
+    margin-left:36%; */
+}
+
+.ar .ppp {
+  width: 100% !important;
+  margin-top: -5px;
+}
+
+.ar .lab1 {
+  float: right;
+  font-style: bold;
+  font-weight: 600;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #686971;
+}
+
+.ar .user-icon {
+  position: relative;
+  bottom: 15px;
+  right: 5px;
+}
+
+[key="ar"] title {
+  /* font-weight:bold; */
+  font-family: "Droid Arabic Kufi";
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.93;
+  letter-spacing: normal;
+  text-align: left;
+  color: #42444d;
+}
+
+.dropdown-item {
+  font-family: "Source Sans Pro", sans-serif !important;
+  font-weight: 400;
+}
+
+.dropdown-menu .ar {
+  /* margin-left:unset; */
+  margin-left: auto;
+}
+
+/* [lang="ar"]  body {
+    font-family: 'DroidKufi-Regular' !important;
+
+}  */
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0 !important;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  outline: 0px auto -webkit-focus-ring-color !important;
+  border: none;
+}
+
+.page-main-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.page-main-container input:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.page-main-container select:focus {
+  outline: none;
+  box-shadow: none !important;
+}
+
+.page-main-container .btn:focus {
+  box-shadow: none !important;
+}
+
+.page-main-container .mb-4 {
+  margin-bottom: 0 !important;
+}
+
+.page-main-header {
+  flex: 1 1 auto;
+  /* padding: 5px; */
+  display: flex;
+  box-shadow: 0 1px 0px 0 rgba(0, 0, 0, 0.1);
+  z-index: 99;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+}
+
+.page-main-content-section {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  overflow-y: auto;
+}
+
+.page-main-footer {
+  flex: 0 0 auto;
+}
+
+.form-group {
+  margin-bottom: 0px !important;
+}
+
+.en .show {
+  /* left: -20px !important; */
+}
+
+.ar .convert-btn {
+  font-size: 12px;
+}
+
+.ar .show {
+  /* left: 15px; */
+}
+
+.ar .dropdown {
+  left: 10px !important;
+}
+
+.ar .dropdown-item {
+  padding: 0.25rem 0.5rem !important;
+  text-align: right;
+}
+
+/* .ar .dropdown-menu-lang {
+  position: absolute !important;
+  left: 0px !important;
+} */
+.en .eng-dropdown {
+  min-width: 10rem !important;
+  position: absolute !important;
+  left: -22px !important;
+}
+
+.ar .eng-dropdown {
+  min-width: 10rem !important;
+}
+
+.ar .customer-data {
+  margin-top: 4px;
+}
+
+.ar .close-btn {
+  position: relative;
+  top: -3px;
+  left: 0px;
+  right: 3px;
+}
+
+.ar .radio-btn {
+  width: unset !important;
+  height: unset !important;
+  /* margin-right: 5px; */
+  margin-left: 12px;
+}
+
+.ar .add-info,
+.ar .deliver-name,
+.ar .use-my-location {
+  float: right;
+}
+
+.ar .deliver-name span {
+  padding-right: 30px;
+}
+
+.ar .time-type {
+  margin-top: 20px;
+}
+
+.ar .map-save-btn {
+  float: left;
+  padding-top: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  ::ng-deep .ar .wc-date-popover {
+    position: absolute !important;
+    top: 31px;
+  }
+}
+
+/* ::ng-deep .wc-date-container {
+  border: 1px solid #dddfe2 !important;
+  border-radius: 4px;
+
+
+} */
+/* ::ng-deep  .wc-date-container  span {
+  color: #495057 !important;
+  font-size: 13px !important;
+  float: left !important;
+  position: relative !important;
+  left: 40px !important;
+}
+::ng-deep .wc-date-container i {
+  color: #dddfe2 !important;
+  float: left !important;
+  font-size: 20px;
+  position: absolute !important;
+  left: 8px !important;
+} */
+.ar .req-otp-btn {
+  margin-right: 30px;
+  margin-top: 6px;
+}
+
+.ar .accordian-amount {
+  padding-left: 20px;
+}
+
+.ar .search-lbl {
+  float: right;
+}
+
+.en .in-field {
+  padding-right: 40px;
+}
+
+.ar .in-field {
+  padding-left: 40px;
+}
+
+.ar .ColorPage__color-code-and-name-sec .parent {
+  text-align: right !important;
+}
+
+.ar .salesorder-popup-x-btn {
+  background: #42444d;
+  color: #fff;
+  padding: 22px;
+  width: 70px;
+  text-align: center;
+  position: absolute;
+  top: -24px !important;
+  right: 44px !important;
+  cursor: pointer;
+  margin-top: -14px;
+  margin-right: -14px;
+}
+
+.ar .name-color-size-popup {
+  text-align: right !important;
+}
+
+.ar .salesorder-batches-popup-qty {
+  padding-right: 80px;
+}
+
+.ar .arabic-center-align {
+  text-align: center !important;
+}
+
+.ar .selected-products-row {
+  text-align: left;
+}
+
+.ar .label-padding-left-ar {
+  padding-left: 10px;
+}
+
+.ar .ar-padding-right {
+  padding-right: 20px;
+}
+
+.ar .mobile-number-ar {
+  text-align: initial;
+}
+
+/* transfer order summary css start */
+.ar .popover {
+  left: 26px !important;
+}
+
+.ar ngb-popover-window.bs-popover-bottom .arrow,
+ngb-popover-window.bs-popover-top .arrow {
+  left: 50%;
+  margin-left: -2.5rem !important;
+}
+
+.ar .pop-icons span {
+  padding-left: 8px;
+}
+
+.ar .dx-datagrid-filter-row .dx-editor-cell .dx-editor-with-menu .dx-menu {
+  margin-left: 22px !important;
+}
+
+.ar .button1 {
+  float: left;
+  margin-left: 8px;
+}
+
+.ar .addbutton {
+  float: right;
+  margin-left: 8px;
+}
+
+.ar .transferOrderOffline-btns {
+}
+
+.ar .ship-transfer {
+  padding-left: 10px;
+}
+.ar .free-item-btn {
+  top: 43px !important;
+  width: 122px !important;
+  position: relative;
+  /* width: 85px; */
+}
