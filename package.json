@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "5.0.12",
+  "version": "5.0.13",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
@@ -19,7 +19,7 @@
   },
   "devDependencies": {
     "electron": "^5.0.1",
-    "electron-builder": "^20.28.4",
+    "electron-builder": "^20.28.3",
     "http-server": "^0.11.1"
   },
   "build": {
@@ -28,7 +28,7 @@
         "provider": "github",
         "owner": "krupavarma",
         "url": "com.github.krupavarma.ele-auto",
-        "token": "87ade3eb752c1e8c3c006909652398dc7c819c84"
+        "private": false
       }
     ],
     "appId": "com.github.krupavarma.ele-auto",
