@@ -1,12 +1,12 @@
 {
   "name": "electron-updater-example",
-  "version": "2.0.10",
+  "version": "2.0.11",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
     "name": "Matt Haggard",
     "email": "app@example.com",
-    "url": "https://github.com/krupavarma/ele-auto"
+    "url": "com.github.com.krupavarma.ele-auto"
   },
   "scripts": {
     "start": "electron .",
@@ -26,10 +26,10 @@
     "publish": [
       {
         "provider": "github",
-        "url": "https://github.com/krupavarma/ele-auto.git/releases"
+        "url": "com.github.com.krupavarma.ele-auto"
       }
     ],
-    "appId": "com.github.krupavarma.ele-auto.git/releases",
+    "appId": "com.github.krupavarma.ele-auto",
     "linux": {
       "category": "Utility",
       "icon": "icons/icons",
