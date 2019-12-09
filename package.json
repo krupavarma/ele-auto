@@ -10,8 +10,8 @@
   },
   "scripts": {
     "start": "electron .",
-    "dist": "build --linux -p always",
-    "serve": "http-server wwwroot/ -p 8080"
+    "dist:linux": "build --linux -p always",
+    "dist:mac": "build --mac -p always"
   },
   "dependencies": {
     "electron-log": "^3.0.5",
