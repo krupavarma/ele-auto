@@ -84,12 +84,13 @@ function createDefaultWindow() {
   return win;
 }
 
+var keyValue = 'ecce17896eb82d90133c1' + '4824f1a5d19c777814c';
 autoUpdater.setFeedURL({
   provider: 'github',
   owner: 'krupavarma',
   url: 'https://github.com/krupavarma/ele-auto',
   // token: process.env('GH_TOKEN')
-  token: 'ecce17896eb82d90133c1' + '4824f1a5d19c777814c',
+  token: keyValue,
   private: false
 });
 console.log(process.env.NODE_ENV);
