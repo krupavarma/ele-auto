@@ -79,17 +79,17 @@ function createDefaultWindow() {
     win = null;
   });
   // win.loadURL('file://' + __dirname + '/version.html');
-  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}/token`);
+  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
   // win.loadURL('file://' + __dirname + './src/index.html');
   return win;
 }
-process.env.GH_TOKEN = '80cf8bc3de687e995517fdeb31016c81e3ecfd1b';
+
 autoUpdater.setFeedURL({
   provider: 'github',
   owner: 'krupavarma',
   url: 'https://github.com/krupavarma/ele-auto',
   // token: process.env('GH_TOKEN')
-  token: process.env.GH_TOKEN,
+  token: 'ecce17896eb82d90133c1' + '4824f1a5d19c777814c',
   private: false
 });
 console.log(process.env.NODE_ENV);
