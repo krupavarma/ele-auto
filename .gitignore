@@ -1,10 +1,6 @@
 node_modules
 certs/
-dist/**/*.dmg
-dist/**/*-config.yaml
-dist/**/*.blockmap
-dist/**/*.app
-dist/**/*.zip
+dist/
 wwwroot/
 package-lock.json
 electron-builder.yml
