@@ -1,0 +1,12 @@
+version: 5.0.21
+files:
+  - url: electron-updater-example-5.0.21-mac.zip
+    sha512: GVcHx/IhSPdgjsLX+1P1UibmNrwDdwbj1YQuECnXW/a4wuv891XB5tYByUYapoR1p7/06YL5k3L6xbQlPO64Sw==
+    size: 72134131
+    blockMapSize: 75999
+  - url: electron-updater-example-5.0.21.dmg
+    sha512: /bvKF9oQ/m3GMJICtuX7OemmymgCysp22XsvGlZLzvdPVgCA52cUXg0ik1VOwQyUDPrD2rRIkBOtPNO1q1vg5w==
+    size: 74341419
+path: electron-updater-example-5.0.21-mac.zip
+sha512: GVcHx/IhSPdgjsLX+1P1UibmNrwDdwbj1YQuECnXW/a4wuv891XB5tYByUYapoR1p7/06YL5k3L6xbQlPO64Sw==
+releaseDate: '2019-12-09T09:05:51.165Z'
