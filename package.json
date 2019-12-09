@@ -11,7 +11,7 @@
   "scripts": {
     "start": "electron .",
     "dist:linux": "build --linux -p always",
-    "dist:mac": "build --macp -p always"
+    "dist:mac": "build --mac -p always"
   },
   "dependencies": {
     "electron-log": "^3.0.5",
@@ -27,7 +27,8 @@
       {
         "provider": "github",
         "owner": "krupavarma",
-        "url": "com.github.krupavarma.ele-auto"
+        "url": "com.github.krupavarma.ele-auto",
+        "token": "c57c9603455eac2c1c39e258c0a57228196cabb9"
       }
     ],
     "appId": "com.github.krupavarma.ele-auto",
