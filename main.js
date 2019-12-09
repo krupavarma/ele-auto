@@ -1,10 +1,16 @@
 // This is free and unencumbered software released into the public domain.
 // See LICENSE for details
 
-const { app, BrowserWindow, Menu, protocol, ipcMain } = require('electron');
+const {
+  app,
+  BrowserWindow,
+  Menu,
+  protocol,
+  ipcMain,
+  dialog
+} = require('electron');
 const log = require('electron-log');
 const { autoUpdater } = require('electron-updater');
-
 //-------------------------------------------------------------------
 // Logging
 //
@@ -16,7 +22,7 @@ const { autoUpdater } = require('electron-updater');
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = 'info';
 log.info('App starting...');
-
+console.log(process.env.NODE_ENV);
 //-------------------------------------------------------------------
 // Define the menu
 //
@@ -73,21 +79,27 @@ function createDefaultWindow() {
     win = null;
   });
   // win.loadURL('file://' + __dirname + '/version.html');
-  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}`);
+  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}/token`);
   // win.loadURL('file://' + __dirname + './src/index.html');
   return win;
 }
+process.env.GH_TOKEN = '80cf8bc3de687e995517fdeb31016c81e3ecfd1b';
 autoUpdater.setFeedURL({
   provider: 'github',
   owner: 'krupavarma',
-  url: 'https://github.com/krupavarma/ele-auto.git',
+  url: 'https://github.com/krupavarma/ele-auto',
   // token: process.env('GH_TOKEN')
-  token: process.env.NODE_ENV
+  token: process.env.GH_TOKEN,
+  private: false
 });
+console.log(process.env.NODE_ENV);
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 });
 autoUpdater.on('update-available', info => {
+  dialog.showMessageBox({
+    message: 'checking-for-update !!'
+  });
   sendStatusToWindow('Update available.');
 });
 autoUpdater.on('update-not-available', info => {

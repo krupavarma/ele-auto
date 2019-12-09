@@ -1,12 +1,12 @@
 {
   "name": "electron-updater-example",
-  "version": "5.0.20",
+  "version": "5.0.21",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
-    "name": "Matt Haggard",
+    "name": "krupavarma",
     "email": "app@example.com",
-    "url": "https://example.com/"
+    "url": "com.github.krupavarma.ele-auto"
   },
   "scripts": {
     "start": "electron .",

@@ -4,3 +4,4 @@ dist/
 wwwroot/
 package-lock.json
 electron-builder.yml
+id.json
