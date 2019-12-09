@@ -81,7 +81,7 @@ autoUpdater.setFeedURL({
   provider: 'github',
   owner: 'krupavarma',
   url: 'com.github.krupavarma.ele-auto',
-  token: '5c0aa1bce56ef6d489df4b4d267599004079ca37'
+  token: 'eaec7687e7d40324e75f3c3d29ed459e063b67b4'
 });
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
