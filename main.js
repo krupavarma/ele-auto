@@ -77,7 +77,6 @@ function createDefaultWindow() {
   // win.loadURL('file://' + __dirname + './src/index.html');
   return win;
 }
-//Sys.getenv("GH_TOKEN") = "ed21517bd6adfff2eb77e92d93c17c00f7258056";
 autoUpdater.setFeedURL({
   provider: "github",
   owner: "krupavarma",
