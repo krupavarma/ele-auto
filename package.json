@@ -23,14 +23,6 @@
     "http-server": "^0.11.1"
   },
   "build": {
-    "publish": [
-      {
-        "provider": "github",
-        "owner": "krupavarma",
-        "url": "com.github.krupavarma.ele-auto",
-        "token": "5c0aa1bce56ef6d489df4b4d267599004079ca37"
-      }
-    ],
     "appId": "com.github.krupavarma.ele-auto",
     "linux": {
       "category": "Utility",

@@ -77,7 +77,12 @@ function createDefaultWindow() {
   // win.loadURL('file://' + __dirname + './src/index.html');
   return win;
 }
-
+autoUpdater.setFeedURL({
+  provider: 'github',
+  owner: 'krupavarma',
+  url: 'com.github.krupavarma.ele-auto',
+  token: '5c0aa1bce56ef6d489df4b4d267599004079ca37'
+});
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 });
