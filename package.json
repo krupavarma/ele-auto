@@ -11,6 +11,7 @@
   "scripts": {
     "start": "electron .",
     "dist:linux": "build --linux -p always",
+    "dist:win": "build --windows -p always",
     "dist:mac": "build --mac -p always"
   },
   "dependencies": {
