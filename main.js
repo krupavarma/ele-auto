@@ -84,7 +84,7 @@ function createDefaultWindow() {
   // win.loadURL('file://' + __dirname + '/version.html');
   // win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
   win.loadURL('file://' + __dirname + './src/index.html');
-  // return win;
+  return win;
 }
 
 process.env.GH_TOKEN = process.env.GH_TOKEN
