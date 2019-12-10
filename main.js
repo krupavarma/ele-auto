@@ -1,6 +1,3 @@
-// This is free and unencumbered software released into the public domain.
-// See LICENSE for details
-
 const {
   app,
   BrowserWindow,
@@ -75,15 +72,13 @@ function createDefaultWindow() {
     height: 768,
     resizable: true,
   });
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
   win.on("closed", () => {
     win = null;
   });
-  win.setMenu(null);
-  win.maximize();
   // win.loadURL('file://' + __dirname + '/version.html');
-  // win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
-  win.loadURL('file://' + __dirname + './src/index.html');
+  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
+  // win.loadURL('file://' + __dirname + './src/index.html');
   return win;
 }
 
@@ -115,7 +110,6 @@ autoUpdater.on("error", err => {
   sendStatusToWindow("Error in auto-updater. " + err);
 });
 autoUpdater.on("download-progress", progressObj => {
- 
   let log_message = "Download speed: " + progressObj.bytesPerSecond;
   log_message = log_message + " - Downloaded " + progressObj.percent + "%";
   log_message =
@@ -125,10 +119,7 @@ autoUpdater.on("download-progress", progressObj => {
     "/" +
     progressObj.total +
     ")";
-    dialog.showMessageBox({
-      message : this.sendStatusToWindow(log_message)
-    });
- 
+  sendStatusToWindow(log_message);
 });
 autoUpdater.on("update-downloaded", (ev, info) => {
   // Wait 5 seconds, then quit and install
