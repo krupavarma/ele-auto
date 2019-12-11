@@ -70,15 +70,15 @@ function createDefaultWindow() {
     },
     width: 1024,
     height: 768,
-    resizable: true,
+    resizable: true
   });
   win.webContents.openDevTools();
   win.on("closed", () => {
     win = null;
   });
   // win.loadURL('file://' + __dirname + '/version.html');
-  // win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
-  win.loadURL('file://' + __dirname + './src/index.html');
+  //win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
+  win.loadURL(`file://${__dirname}/src/index.html#v${app.getVersion()}`);
   return win;
 }
 

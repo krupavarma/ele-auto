@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta Http-Equiv="Cache" content="no-cache" />
-    <meta Http-Equiv="Pragma-Control" content="no-cache" />
-    <meta Http-Equiv="Cache-directive" Content="no-cache" />
-    <meta Http-Equiv="Pragma-directive" Content="no-cache" />
-    <meta Http-Equiv="Cache-Control" Content="no-cache" />
-    <meta Http-Equiv="Pragma" Content="no-cache" />
-    <meta Http-Equiv="Expires" Content="-1" />
-    <meta Http-Equiv="Pragma-directive: no-cache" />
-    <meta Http-Equiv="Cache-directive: no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <meta http-equiv="Pragma-Control" content="no-cache" />
+    <meta http-equiv="Cache-directive" content="no-cache" />
+    <meta http-equiv="Pragma-directive" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="Pragma-directive: no-cache" />
+    <meta http-equiv="Cache-directive: no-cache" />
     <meta charset="utf-8" />
     <title>MposWeb</title>
     <base href="" />
@@ -38,25 +38,40 @@
     <!-- <script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBij9CePCQmGm5F1FyvhDpahHy18aku-7s&libraries=places"
       type="text/javascript"
     ></script> -->
-  <link rel="stylesheet" href="styles.349f26a48dbdf64a410d.css"></head>
+    <link rel="stylesheet" href="styles.349f26a48dbdf64a410d.css" />
+  </head>
 
   <body class="en">
-      Current version: <span id="version">vX.Y.Z</span>
+    Current version: <span id="version">vX.Y.Z</span>
     <app-root></app-root>
     <script>
       // Display the current version
       let version = window.location.hash.substring(1);
-      document.getElementById('version').innerText = version;
+      document.getElementById("version").innerText = version;
 
       // Listen for messages
-      const { ipcRenderer } = window.require('electron');
-      ipcRenderer.on('message', function(event, text) {
-        var container = document.getElementById('messages');
-        var message = document.createElement('div');
+      const { ipcRenderer } = window.require("electron");
+      ipcRenderer.on("message", function(event, text) {
+        var container = document.getElementById("messages");
+        var message = document.createElement("div");
         message.innerHTML = text;
         container.appendChild(message);
       });
     </script>
     <!-- <app-footer></app-footer> -->
-  <script type="text/javascript" src="runtime.0081a8d6b83d403c312c.js"></script><script type="text/javascript" src="es2015-polyfills.7e1ad6e3376435525549.js" nomodule></script><script type="text/javascript" src="polyfills.b597a73eeb3035e0c0a8.js"></script><script type="text/javascript" src="main.7e660ddddfef15c117c2.js"></script></body>
+    <script
+      type="text/javascript"
+      src="runtime.0081a8d6b83d403c312c.js"
+    ></script
+    ><script
+      type="text/javascript"
+      src="es2015-polyfills.7e1ad6e3376435525549.js"
+      nomodule
+    ></script
+    ><script
+      type="text/javascript"
+      src="polyfills.b597a73eeb3035e0c0a8.js"
+    ></script
+    ><script type="text/javascript" src="main.7e660ddddfef15c117c2.js"></script>
+  </body>
 </html>
