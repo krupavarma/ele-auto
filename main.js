@@ -72,7 +72,8 @@ function createDefaultWindow() {
     height: 768,
     resizable: true
   });
-  win.webContents.openDevTools();
+  win.maximize();
+  // win.webContents.openDevTools();
   win.on("closed", () => {
     win = null;
   });
@@ -120,6 +121,9 @@ autoUpdater.on("download-progress", progressObj => {
     progressObj.total +
     ")";
   sendStatusToWindow(log_message);
+  dialog.showMessageBox({
+    message: "Downloadingprogress"+progressObj.percent + "%"
+  });
 });
 autoUpdater.on("update-downloaded", (ev, info) => {
   // Wait 5 seconds, then quit and install
