@@ -43,6 +43,7 @@
 
   <body class="en">
     Current version: <span id="version">vX.Y.Z</span>
+    <div id="messages"></div>
     <app-root></app-root>
     <script>
       // Display the current version
@@ -53,6 +54,7 @@
       const { ipcRenderer } = window.require("electron");
       ipcRenderer.on("message", function(event, text) {
         var container = document.getElementById("messages");
+        document.parentNode.removeChild(message)
         var message = document.createElement("div");
         message.innerHTML = text;
         container.appendChild(message);
