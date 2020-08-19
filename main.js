@@ -5,9 +5,9 @@ const {
   protocol,
   ipcMain,
   dialog
-} = require("electron");
-const log = require("electron-log");
-const { autoUpdater } = require("electron-updater");
+} = require('electron');
+const log = require('electron-log');
+const { autoUpdater } = require('electron-updater');
 //-------------------------------------------------------------------
 // Logging
 //
@@ -17,8 +17,8 @@ const { autoUpdater } = require("electron-updater");
 // but it sure makes debugging easier :)
 //-------------------------------------------------------------------
 autoUpdater.logger = log;
-autoUpdater.logger.transports.file.level = "info";
-log.info("App starting...");
+autoUpdater.logger.transports.file.level = 'info';
+log.info('App starting...');
 console.log(process.env.NODE_ENV);
 //-------------------------------------------------------------------
 // Define the menu
@@ -26,19 +26,19 @@ console.log(process.env.NODE_ENV);
 // THIS SECTION IS NOT REQUIRED
 //-------------------------------------------------------------------
 let template = [];
-if (process.platform === "darwin") {
+if (process.platform === 'darwin') {
   // OS X
   const name = app.getName();
   template.unshift({
     label: name,
     submenu: [
       {
-        label: "About " + name,
-        role: "about"
+        label: 'About ' + name,
+        role: 'about'
       },
       {
-        label: "Quit",
-        accelerator: "Command+Q",
+        label: 'Quit',
+        accelerator: 'Command+Q',
         click() {
           app.quit();
         }
@@ -60,7 +60,7 @@ let win;
 
 function sendStatusToWindow(text) {
   log.info(text);
-  win.webContents.send("message", text);
+  win.webContents.send('message', text);
 }
 function createDefaultWindow() {
   win = new BrowserWindow({
@@ -74,7 +74,7 @@ function createDefaultWindow() {
   });
   win.maximize();
   // win.webContents.openDevTools();
-  win.on("closed", () => {
+  win.on('closed', () => {
     win = null;
   });
   // win.loadURL('file://' + __dirname + '/version.html');
@@ -85,64 +85,64 @@ function createDefaultWindow() {
 
 process.env.GH_TOKEN_TESTING = process.env.GH_TOKEN_TESTING
   ? process.env.GH_TOKEN_TESTING
-  : "84e7205d59342c180a69" + "1a4a223e58b19d9c4325";
+  : '84e7205d59342c180a69' + '1a4a223e58b19d9c4325';
 autoUpdater.setFeedURL({
-  provider: "github",
-  owner: "krupavarma",
-  repo: "ele-auto",
+  provider: 'github',
+  owner: 'krupavarma',
+  repo: 'ele-auto',
   // token: process.env('GH_TOKEN')
   token: process.env.GH_TOKEN_TESTING,
   private: false
 });
 console.log(process.env.NODE_ENV);
-autoUpdater.on("checking-for-update", () => {
-  sendStatusToWindow("Checking for update...");
+autoUpdater.on('checking-for-update', () => {
+  sendStatusToWindow('Checking for update...');
 });
-autoUpdater.on("update-available", info => {
+autoUpdater.on('update-available', info => {
   dialog.showMessageBox({
-    message: "checking-for-update !!"
+    message: 'checking-for-update !!'
   });
-  sendStatusToWindow("Update available.");
+  sendStatusToWindow('Update available.');
 });
-autoUpdater.on("update-not-available", info => {
-  sendStatusToWindow("Update not available.");
+autoUpdater.on('update-not-available', info => {
+  sendStatusToWindow('Update not available.');
 });
-autoUpdater.on("error", err => {
-  sendStatusToWindow("Error in auto-updater. " + err);
+autoUpdater.on('error', err => {
+  sendStatusToWindow('Error in auto-updater. ' + err);
 });
-autoUpdater.on("download-progress", progressObj => {
-  let log_message = "Download speed: " + progressObj.bytesPerSecond;
-  log_message = log_message + " - Downloaded " + progressObj.percent + "%";
+autoUpdater.on('download-progress', progressObj => {
+  let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
+  log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message =
     log_message +
-    " (" +
+    ' (' +
     progressObj.transferred +
-    "/" +
+    '/' +
     progressObj.total +
-    ")";
+    ')';
   sendStatusToWindow(log_message);
   dialog.showMessageBox({
-    message: "Downloadingprogress" + progressObj.percent + "%"
+    message: 'Downloadingprogress' + progressObj.percent + '%'
   });
 });
-autoUpdater.on("update-downloaded", (ev, info) => {
+autoUpdater.on('update-downloaded', (ev, info) => {
   // Wait 5 seconds, then quit and install
   // In your application, you don't need to wait 5 seconds.
   // You could call autoUpdater.quitAndInstall(); immediately
-  sendStatusToWindow("Update downloaded");
+  sendStatusToWindow('Update downloaded');
 
   setTimeout(function() {
     autoUpdater.quitAndInstall();
   }, 5000);
 });
-app.on("ready", function() {
+app.on('ready', function() {
   // Create the Menu
   const menu = Menu.buildFromTemplate(template);
   Menu.setApplicationMenu(menu);
 
   createDefaultWindow();
 });
-app.on("window-all-closed", () => {
+app.on('window-all-closed', () => {
   app.quit();
 });
 
@@ -156,10 +156,16 @@ app.on("window-all-closed", () => {
 // This will immediately download an update, then install when the
 // app quits.
 //-------------------------------------------------------------------
-app.on("ready", function() {
+app.on('ready', function() {
   autoUpdater.checkForUpdatesAndNotify();
 });
 
+setInterval(() => {
+  console.log('true or false', downloadInprogress);
+  if (downloadInprogress == false) {
+    autoUpdater.checkForUpdates();
+  }
+}, 60000);
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
 //
