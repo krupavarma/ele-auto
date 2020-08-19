@@ -73,7 +73,7 @@ function createDefaultWindow() {
     resizable: true
   });
   win.maximize();
-  // win.webContents.openDevTools();
+  win.webContents.openDevTools();
   win.on('closed', () => {
     win = null;
   });
@@ -149,7 +149,12 @@ app.on('window-all-closed', () => {
 //
 // CHOOSE one of the following options for Auto updates
 //
-
+setInterval(() => {
+  console.log('true or false', downloadInprogress);
+  if (downloadInprogress == false) {
+    autoUpdater.checkForUpdates();
+  }
+}, 60000);
 //-------------------------------------------------------------------
 // Auto updates - Option 1 - Simplest version
 //
@@ -160,12 +165,6 @@ app.on('ready', function() {
   autoUpdater.checkForUpdatesAndNotify();
 });
 
-setInterval(() => {
-  console.log('true or false', downloadInprogress);
-  if (downloadInprogress == false) {
-    autoUpdater.checkForUpdates();
-  }
-}, 60000);
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
 //
