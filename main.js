@@ -95,6 +95,7 @@ autoUpdater.setFeedURL({
   private: false
 });
 console.log(process.env.NODE_ENV);
+var downloadInprogress = false;
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 });
@@ -103,6 +104,7 @@ autoUpdater.on('update-available', info => {
     message: 'checking-for-update !!'
   });
   sendStatusToWindow('Update available.');
+  downloadInprogress = true;
 });
 autoUpdater.on('update-not-available', info => {
   sendStatusToWindow('Update not available.');
