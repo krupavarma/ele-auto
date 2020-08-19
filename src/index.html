@@ -11,69 +11,123 @@
     <meta http-equiv="Pragma-directive: no-cache" />
     <meta http-equiv="Cache-directive: no-cache" />
     <meta charset="utf-8" />
-    <title>MposWeb</title>
-    <base href="" />
+    <title></title>
+    <base href="./" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
-      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@progress/kendo-theme-default@latest/dist/all.css"
-    />
-    <link
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
-
-    <link
+    <!-- <script
+      type="text/javascript"
+      src="//cdn.asprise.com/scannerjs/scanner.js"
+    ></script> -->
+    <!-- <link
       href="https://file.myfontastic.com/Jnf54BZCm7mSjGCxNRbfp3/icons.css"
       rel="stylesheet"
-    />
+    /> -->
     <!-- <script  async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBij9CePCQmGm5F1FyvhDpahHy18aku-7s&libraries=places"
       type="text/javascript"
     ></script> -->
-    <link rel="stylesheet" href="styles.349f26a48dbdf64a410d.css" />
+    <!-- <script
+      type="text/javascript"
+      src="assets/js/scannerjs/scanner.js"
+    ></script> -->
+    <style>
+      #snackbar {
+        visibility: hidden;
+        min-width: 250px;
+        margin-left: -125px;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        border-radius: 2px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        font-size: 17px;
+      }
+
+      #snackbar.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @-webkit-keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+    </style>
   </head>
 
   <body class="en">
-    Current version: <span id="version">vX.Y.Z</span>
-    <div id="messages"></div>
+    <div id="snackbar"></div>
     <app-root></app-root>
     <script>
       // Display the current version
-      let version = window.location.hash.substring(1);
-      document.getElementById("version").innerText = version;
-
+      // let version = window.location.hash.substring(1);
+      // document.getElementById('version').innerText = version;
       // Listen for messages
-      const { ipcRenderer } = window.require("electron");
-      ipcRenderer.on("message", function(event, text) {
-        var container = document.getElementById("messages");
-        document.parentNode.removeChild(message)
-        var message = document.createElement("div");
-        message.innerHTML = text;
-        container.appendChild(message);
+      const { ipcRenderer } = window.require('electron');
+      ipcRenderer.on('message', function(event, text) {
+        var x = document.getElementById('snackbar');
+
+        var str = text.charAt(0);
+        if (str == 'U' || str == 'u') {
+          x.className = 'show';
+
+          x.innerHTML = text;
+          setTimeout(() => {
+            x.className = x.className.replace('show', '');
+          }, 2000);
+        } else if (str == 'D' || str == 'd') {
+          x.className = 'show';
+
+          x.innerHTML = text;
+        }
       });
     </script>
+
     <!-- <app-footer></app-footer> -->
-    <script
-      type="text/javascript"
-      src="runtime.0081a8d6b83d403c312c.js"
-    ></script
-    ><script
-      type="text/javascript"
-      src="es2015-polyfills.7e1ad6e3376435525549.js"
-      nomodule
-    ></script
-    ><script
-      type="text/javascript"
-      src="polyfills.b597a73eeb3035e0c0a8.js"
-    ></script
-    ><script type="text/javascript" src="main.7e660ddddfef15c117c2.js"></script>
   </body>
 </html>
