@@ -60,7 +60,7 @@ let win;
 
 function sendStatusToWindow(text) {
   log.info(text);
-  win.webContents.send('message', text);
+  // win.webContents.send('message', text);
 }
 function createDefaultWindow() {
   win = new BrowserWindow({
@@ -113,6 +113,11 @@ autoUpdater.on('error', err => {
   sendStatusToWindow('Error in auto-updater. ' + err);
 });
 autoUpdater.on('download-progress', progressObj => {
+  sendStatusToWindow(
+    'Downloaded ' +
+      (Math.round(progressObj.percent * 100) / 100).toFixed(2) +
+      '%'
+  );
   let log_message = 'Download speed: ' + progressObj.bytesPerSecond;
   log_message = log_message + ' - Downloaded ' + progressObj.percent + '%';
   log_message =
@@ -122,10 +127,6 @@ autoUpdater.on('download-progress', progressObj => {
     '/' +
     progressObj.total +
     ')';
-  sendStatusToWindow(log_message);
-  dialog.showMessageBox({
-    message: 'Downloadingprogress' + progressObj.percent + '%'
-  });
 });
 autoUpdater.on('update-downloaded', (ev, info) => {
   // Wait 5 seconds, then quit and install
