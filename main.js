@@ -1,6 +1,3 @@
-// This is free and unencumbered software released into the public domain.
-// See LICENSE for details
-
 const {
   app,
   BrowserWindow,
@@ -71,28 +68,30 @@ function createDefaultWindow() {
       webSecurity: false,
       nodeIntegration: true
     },
-    width: 1280,
-    height: 720
+    width: 1024,
+    height: 768,
+    resizable: true
   });
-  win.webContents.openDevTools();
+  win.maximize();
+  // win.webContents.openDevTools();
   win.on("closed", () => {
     win = null;
   });
   // win.loadURL('file://' + __dirname + '/version.html');
-  win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
-  // win.loadURL('file://' + __dirname + './src/index.html');
+  //win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
+  win.loadURL(`file://${__dirname}/src/index.html#v${app.getVersion()}`);
   return win;
 }
 
-process.env.GH_TOKEN = process.env.GH_TOKEN
-  ? process.env.GH_TOKEN
+process.env.GH_TOKEN_TESTING = process.env.GH_TOKEN_TESTING
+  ? process.env.GH_TOKEN_TESTING
   : "84e7205d59342c180a69" + "1a4a223e58b19d9c4325";
 autoUpdater.setFeedURL({
   provider: "github",
   owner: "krupavarma",
   repo: "ele-auto",
   // token: process.env('GH_TOKEN')
-  token: process.env.GH_TOKEN,
+  token: process.env.GH_TOKEN_TESTING,
   private: false
 });
 console.log(process.env.NODE_ENV);
@@ -122,6 +121,9 @@ autoUpdater.on("download-progress", progressObj => {
     progressObj.total +
     ")";
   sendStatusToWindow(log_message);
+  dialog.showMessageBox({
+    message: "Downloadingprogress" + progressObj.percent + "%"
+  });
 });
 autoUpdater.on("update-downloaded", (ev, info) => {
   // Wait 5 seconds, then quit and install
