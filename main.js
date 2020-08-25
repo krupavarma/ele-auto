@@ -7,6 +7,7 @@ const {
   dialog
 } = require('electron');
 const log = require('electron-log');
+const latestUpdate = require('update-electron-app');
 const { autoUpdater } = require('electron-updater');
 //-------------------------------------------------------------------
 // Logging
@@ -65,7 +66,7 @@ function sendStatusToWindow(text) {
 function createDefaultWindow() {
   win = new BrowserWindow({
     webPreferences: {
-      webSecurity: false,
+      webSecurity: true,
       nodeIntegration: true
     },
     width: 1024,
@@ -79,7 +80,7 @@ function createDefaultWindow() {
   });
   // win.loadURL('file://' + __dirname + '/version.html');
   //win.loadURL(`file://${__dirname}/version.html#v${app.getVersion()}}`);
-  win.loadURL(`file://${__dirname}/src/index.html#v${app.getVersion()}`);
+  win.loadURL(`file://${__dirname}/src/index.html`);
   return win;
 }
 
@@ -94,15 +95,15 @@ autoUpdater.setFeedURL({
   token: process.env.GH_TOKEN_TESTING,
   private: false
 });
-console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 var downloadInprogress = false;
 autoUpdater.on('checking-for-update', () => {
   sendStatusToWindow('Checking for update...');
 });
 autoUpdater.on('update-available', info => {
-  dialog.showMessageBox({
-    message: 'checking-for-update !!'
-  });
+  // dialog.showMessageBox({
+  //   message: 'checking-for-update !!'
+  // });
   sendStatusToWindow('Update available.');
   downloadInprogress = true;
 });
@@ -145,6 +146,7 @@ app.on('ready', function() {
 
   createDefaultWindow();
 });
+app.disableHardwareAcceleration();
 app.on('window-all-closed', () => {
   app.quit();
 });
@@ -152,12 +154,7 @@ app.on('window-all-closed', () => {
 //
 // CHOOSE one of the following options for Auto updates
 //
-setInterval(() => {
-  console.log('true or false', downloadInprogress);
-  if (downloadInprogress == false) {
-    autoUpdater.checkForUpdates();
-  }
-}, 60000);
+
 //-------------------------------------------------------------------
 // Auto updates - Option 1 - Simplest version
 //
@@ -167,7 +164,12 @@ setInterval(() => {
 app.on('ready', function() {
   autoUpdater.checkForUpdatesAndNotify();
 });
-
+setInterval(() => {
+  console.log('true or false', downloadInprogress);
+  if (downloadInprogress == false) {
+    autoUpdater.checkForUpdates();
+  }
+}, 1000);
 //-------------------------------------------------------------------
 // Auto updates - Option 2 - More control
 //
