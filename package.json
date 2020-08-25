@@ -1,6 +1,6 @@
 {
   "name": "electron-updater-example",
-  "version": "5.0.54",
+  "version": "5.0.55",
   "main": "main.js",
   "description": "electron-updater example project",
   "author": {
@@ -10,9 +10,9 @@
   },
   "scripts": {
     "start": "electron .",
-    "dist:linux": "build --linux -p always",
-    "dist:win": "build --windows -p always",
-    "dist:mac": "build --mac -p always"
+    "build:linux": "build --linux -p always",
+    "build:win": "build --windows -p always",
+    "build:mac": "build --mac -p always"
   },
   "dependencies": {
     "electron-log": "^3.0.9",
