@@ -61,7 +61,7 @@ let win;
 
 function sendStatusToWindow(text) {
   log.info(text);
-  // win.webContents.send('message', text);
+  win.webContents.send('message', text);
 }
 function createDefaultWindow() {
   win = new BrowserWindow({
@@ -108,7 +108,7 @@ autoUpdater.on('update-available', info => {
   downloadInprogress = true;
 });
 autoUpdater.on('update-not-available', info => {
-  sendStatusToWindow('Update not available.');
+  // sendStatusToWindow('Update not available.');
 });
 autoUpdater.on('error', err => {
   sendStatusToWindow('Error in auto-updater. ' + err);
